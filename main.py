@@ -1,37 +1,42 @@
-def exo_1 (a : int, b : int):
-    my_boolean = True
-    my_int = 9
-    my_str = f"""En résumé :
-        my_bloolean = {my_boolean}
-        my_int = {my_int} 
-    """
-
-
-    my_power = a**b
-    my_modulo = a%b
-    my_full_div = a//b
-    pretty_sentence = f"""
-    Les opérateurs :
-
-        {a}^{b} : {my_power}
-        {a}%{b} : {my_modulo}
-        {a}//{b} : {my_full_div}
-        """
-    print(pretty_sentence)
-
 def generate_value () :
     k = 1
-    while True :
+    while True:
         yield 2**k
         k+=1
 
-def exo_gener_val() :
+def generate_dico () :
+
     generator = generate_value()
+    my_keys = [i for i in range (6, 71, 1)]
+    my_values = [next(generator) for _ in range (len(my_keys))]
 
-    oneliner_list = [next(generator) for _ in range (7)]
-    oneliner_matrix = [[next(generator) for _ in range (7)] for __ in range (3)]
+    my_dico = {}
 
-    import tabulate
+    for i in range (len(my_keys)) :
+        current_key = f"keys_{my_keys[i]}"
+        current_value = my_values[i]
+        my_dico[current_key] = current_value
 
-    pretty_m = tabulate.tabulate(oneliner_matrix)
-    print(pretty_m)
+    return(my_dico)
+
+new_dico = generate_dico()
+
+def print_pairs () :
+
+    for key in new_dico.keys() :
+        corresponding_value = new_dico[key]
+        pretty_sentence = f"For the {key}, here is the corresponding value {corresponding_value}"
+        print(pretty_sentence)   
+
+def exo_1_try_except (a:int,b:int) :
+
+    try :
+        c = a/b
+        print(f"YEP : {c}")
+    except ZeroDivisionError :
+        print("Attention ZeroDivisionError")
+    except :
+        print ("Error 404")
+    finally : 
+        print ("Ohg Anyway")
+
