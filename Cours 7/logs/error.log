@@ -1,0 +1,6 @@
+ERROR - '1'
+ERROR - 1
+ERROR - <function generate_value at 0x000002773001A480>
+ERROR - unhashable type: 'dict'
+ERROR - <class 'Exception'>
+ERROR - unhashable type: 'dict'
