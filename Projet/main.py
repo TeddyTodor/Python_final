@@ -1,7 +1,7 @@
-from classes.human_class import Human, Parent
+from classes.human_class import Human_factory
 
-human_1 = Human(1, "Jean", "Pierre", 70, 7_000, "m")
-parent_1 = Parent(2, "Jeanny", "Opale", 77, 77_000, "f")
 
-human_1.introduce_yourself()
-parent_1.introduce_yourself()
+human_factory = Human_factory()
+
+human_factory.generate_humans()
+human_factory.live_one_week()
