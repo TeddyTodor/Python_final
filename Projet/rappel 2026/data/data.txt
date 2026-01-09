@@ -1,0 +1,6 @@
+1;90;JB;0;Foot
+3;45;Cat;1;Chat
+2;75;LB;0;Miroir
+4;2;Ek;0;Le Te
+5;13;ko;0;mps
+9;59;Ok;0;KO
